@@ -32,6 +32,20 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav .logo {
+    color: #00bcd4;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -54,6 +68,28 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #00bcd4;
     color: #212121;
+}
+
+/* Hamburger Menu */
+.navbar-toggler {
+    display: none;
+    background-color: #00bcd4;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+.navbar-toggler .bar {
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 4px auto;
+    transition: all 0.3s;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
 }
 
 /* Banner Section */
@@ -244,18 +280,53 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column;
+        display: none;
     }
 
-    .course-container {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    .navbar-toggler {
+        display: block;
     }
 
-    .service-container {
-        grid-template-columns: repeat(1, 1fr);
+    .navbar-menu {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: #212121;
+        width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .cta-btn {
-        padding: 0.8rem 1.5rem;
+    .navbar-menu li {
+        text-align: center;
+        padding: 1rem 0;
     }
+
+    .navbar-menu li a {
+        padding: 1rem;
+        border-radius: 0;
+        display: block;
+    }
+
+    .navbar-menu.active {
+        display: block;
+    }
+}
+
+/* Hamburger Icon Animation */
+.navbar-toggler.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 8px;
+}
+
+.navbar-toggler.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -8px;
 }
