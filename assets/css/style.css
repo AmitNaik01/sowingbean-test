@@ -111,6 +111,21 @@ header {
       text-align: center;
     }
   }
+  /* CTA Button in Navbar */
+.cta-button {
+    background-color: #0856a3;
+    color: #ffffff !important;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #ffffff;
+    color: #004ed4 !important;
+  }
+  
   
 
 /* Banner Section */
