@@ -94,6 +94,14 @@
         <p>&copy; 2024 Sowing Bean. All Rights Reserved.</p>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script>
+        const toggleButton = document.querySelector('.navbar-toggler');
+        const menu = document.querySelector('.navbar-menu');
+
+        toggleButton.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggleButton.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
